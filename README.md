@@ -2,7 +2,7 @@
 
 I have converted project 1 to a simple API microservice.
 It basically gets requests and generates planets and returns coordinates of stars, types of planets etc. as json objects.
-Also, I created a simulator which can be found in here.
+Also, I created a simulator which can be found in <a href="https://github.com/Omerdogan3/project1-GUI">here</a>.
 It gets all of its data from this API.
 
 ```
