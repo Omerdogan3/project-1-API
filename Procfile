@@ -1,1 +1,1 @@
-worker: python index.py
+web: python index.py runserver 0.0.0.0:$PORT
