@@ -77,6 +77,46 @@ class Probe:
       if(self.visitPlanets(lifeCounter, minDistanceIndex)):
         return
       
+  def searchStepByStep(self):
+    self.x = self.universe.getList()[0].x
+    self.y = self.universe.getList()[0].y
+    self.z = self.universe.getList()[0].z
+
+    self.universe.getList()[0].setVisited()
+
+    self.totalStars=1
+    tmpx=self.x
+    tmpy=self.y
+    tmpz=self.z
+
+    lifeCounter = 0
+
+    tmpDistance = []
+    for j in range(self.universe.getListLength()):
+      if(self.universe.getList()[j].getVisited() == False):
+        distance=self.getDistance(tmpx,tmpy,tmpz,self.universe.getList()[j].x,self.universe.getList()[j].y,self.universe.getList()[j].z)
+        tmpTuple = (distance, j)
+        tmpDistance.append(tmpTuple)
+
+    minDistanceIndex = min(tmpDistance)[1]
+    print(minDistanceIndex)
+    minDistance = min(tmpDistance)[0]
+    self.universe.getList()[minDistanceIndex].setVisited()
+
+    self.totalDistance = self.totalDistance + minDistance
+    self.totalStars = self.totalStars + 1
+
+    tmpx=self.universe.getList()[minDistanceIndex].x
+    tmpy=self.universe.getList()[minDistanceIndex].y
+    tmpz=self.universe.getList()[minDistanceIndex].z  
+
+    # Consume fuel, if no fuel left, then return
+    if(self.fuelConsumption(minDistanceIndex)):
+      return "No Fuel"
+    # If find Life in the visited planets, returns
+    if(self.visitPlanets(lifeCounter, minDistanceIndex)):
+      return {"isLifeFound": True, "planetId": self.planetId, "coordinate": self.universe.getList()[minDistanceIndex].getCoordinate()}
+    return {"isLifeFound": False, "coordinate": self.universe.getList()[minDistanceIndex].getCoordinate()} 
 
   def printHelper(self):
     print("=======================================================")

@@ -15,7 +15,7 @@ class Star(object):
 		self.isVisited=False 
 
 	def chancesOfLifeHelper(self):
-		tmp = random.randint(0,10000)
+		tmp = random.randint(0,1000)
 		if(tmp < self.chancesOfLife * 100000):
 			return True
 		return False

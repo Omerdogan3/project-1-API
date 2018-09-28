@@ -1,1 +1,1 @@
-web: python index.py runserver 0.0.0.0:8080
+web: python index.py runserver
