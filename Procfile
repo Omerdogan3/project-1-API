@@ -1,1 +1,1 @@
-web: python index.py runserver
+python index.py
