@@ -68,7 +68,12 @@ class Universe(object):
 
 	def printUniverse(self):
 		print("Total Number of star(s) : ",self.numberOfStars)
-		
+
+		self.medNumOfStars=0     
+		self.giantNumOfStars=0
+		self.dwarfNumOfStars=0
+
+
 		mediumStarPlanet=[0,0,0,0]
 		dwarfStarPlanet=[0,0,0,0]
 		giantStarPlanet=[0,0,0,0]
