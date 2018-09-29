@@ -25,3 +25,5 @@ localhost:8080/search -> simulates each iteration of my search algorithm.
 In each request, returns location of the nearest star and whether or not life exists.
 
 Note!! In default, it only generates 30 stars, if you have better system configuration than i have, you can increase the number.
+
+## <a href="https://github.com/Omerdogan3/project1-GUI">Project1-GUI </a>
